@@ -21,6 +21,7 @@ describe "#generate_username2" do
 
   it "removes whitespace" do
     expect( generate_username2("nathan" , " allen ") ).to eq "nallen"
+    expect( generate_username2(" nathan " , "allen") ).to eq "nallen"
   end
   
   it "handles empty strings" do
@@ -32,6 +33,7 @@ describe "#generate_username2" do
     # hint look at gsub
     expect( generate_username2("Nathan", "Allen !") ).to eq "nallen"
     expect( generate_username2("N@th@n    ", "A-l-l-e-n123! ") ).to eq "nallen"
+    expect( generate_username2("@Nathan", " Allen ") ).to eq "nallen"
   end
 end
    
