@@ -13,8 +13,13 @@ Goal:
 As you tackle each numbered problem below, and each bullet point, run the following from the command line (make sure you're in correct folder):
 
 ```bash
-rspec username_spec.rb
+rspec
 ```
+or for a nicer viewing experience
+```bash
+rspec --format documentation
+```
+(consider making an alias for `rspec` that is actually `rspec --format documentation`)
 
 Take a look inside `username_spec.rb` and you'll see our test suite. For each function, it test that if we give that function a specific input, we get specific output. As you code, run rspec regularly, and pay close attention to the error messages!
 
