@@ -16,7 +16,7 @@ As you tackle each numbered problem below, and each bullet point, run the follow
 rspec username_spec.rb
 ```
 
-Take a look inside `username_spec.rb` and you'll see our test suite. For each function it tests that, given specific input, we get specific output. As you code, run rspec regularly, and pay close attention to the error messages!
+Take a look inside `username_spec.rb` and you'll see our test suite. For each function, it test that if we give that function a specific input, we get specific output. As you code, run rspec regularly, and pay close attention to the error messages!
 
 Take a look at your rspec output right now.
 
@@ -55,7 +55,7 @@ Note the following:
     * STRETCH: ensure that only alphabet characters are allowed 
     
 3. create a function `generate_username3` that takes three arguments: first_name, last_name and birth_year
-    * combine them, e.g. "smith1980"
+    * combine them into one string, e.g. "smith1980"
     * use only the last two digits of birth_year
     * reject invalid birth_year input: e.g. cases like 80, 198, 20111
 
