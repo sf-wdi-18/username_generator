@@ -9,7 +9,29 @@ Goal:
     * John Doe 1978 2 --> manager-jdoe78_1
     * John Doe 1978 3 --> admin-jdoe78_1
 
+
+## Workflow and Submission
+
+* Fork this repo to create a `username_generator_ruby` repo on your github account (or use the alternate workflow). 
+* Clone the repo from your github account onto your computer.
+* Work locally. Remember to commit your changes often, with commit messages that remind you what you did.
+* When finished, push your final version to your github account.
+* Submit the link to the `username_generator_ruby` repo on your github account.
+
+
+
 ## Testing
+
+We'll use a tool called `rspec`  to outline our objectives AND test our code as we go... hooray for Test Driven Development (TDD)!
+
+`rspec` is available as a Ruby gem, so start in your terminal by running the command:
+
+```bash
+gem install rspec
+```
+
+You might get an error here, but we believe in you. Fix it.
+
 As you tackle each numbered problem below, and each bullet point, run the following from the command line (make sure you're in correct folder):
 
 ```bash
