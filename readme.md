@@ -48,7 +48,6 @@ Note the following:
 ##Challenge
 
 1. create a unary function `generate_username1` that accepts a users's first name
-    * return it
     * return only the first character
     * make it lowercase
 
