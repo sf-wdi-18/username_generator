@@ -12,9 +12,9 @@ Goal:
 ## Testing
 As you tackle each numbered problem below, and each bullet point, run the following from the command line (make sure you're in correct folder):
 
-    ```
-        rspec username_spec.rb
-    ```
+```bash
+rspec username_spec.rb
+```
 
 Take a look inside `username_spec.rb` and you'll see our test suite. For each function it tests that, given specific input, we get specific output. As you code, run rspec regularly, and pay close attention to the error messages!
 
