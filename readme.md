@@ -55,7 +55,7 @@ Note the following:
     * STRETCH: ensure that only alphabet characters are allowed 
     
 3. create a function `generate_username3` that takes three arguments: first_name, last_name and birth_year
-    * combine them, e.g. "smith1980"
+    * combine them into one string, e.g. "smith1980"
     * use only the last two digits of birth_year
     * reject invalid birth_year input: e.g. cases like 80, 198, 20111
 
