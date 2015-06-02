@@ -69,7 +69,7 @@ Note the following:
         * 1 --> "seller"
         * 2 --> "manager"
         * 3 --> "admin"
-    * return a string indicating the corresponding privielege level
+    * return a string indicating the corresponding privilege level
     * make the privilege level 0 by default
     * STRETCH: modify your function to `generate_username4` and have it create accounts that specify user privileges
         * prefix usernames with e.g. "admin-", "seller-" --> "seller-jdoe78"
