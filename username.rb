@@ -7,12 +7,7 @@ def generate_username2(first, last)
   #check to see if input is empty
   return nil if last.empty? || first.empty?
   #call generate_username 1 & remove special characters/whitespace then downcase
-  generate_username1(letters_only(first)) + letters_only(last).downcase
-end
-
-# removes all chars except A-Z and a-z from str
-def letters_only(str)
-  str.gsub(/[^A-Za-z]/, '')
+  generate_username1(first.gsub(/[^A-Za-z]/, '')) + last.gsub(/[^A-Za-z]/, '').downcase
 end
 
 def generate_username3(first, last, year)
