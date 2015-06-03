@@ -7,6 +7,7 @@ describe "#generate_username1" do
   it "returns the first letter of first_name & ensures lowercase" do
     expect( generate_username1("nathan") ).to eq "n"
     expect( generate_username1("Nathan") ).to eq "n"
+    expect( generate_username1("") ).to eq ""
   end
 end
 
@@ -22,6 +23,7 @@ describe "#generate_username2" do
   it "removes whitespace" do
     expect( generate_username2("nathan" , " allen ") ).to eq "nallen"
     expect( generate_username2(" nathan " , "allen") ).to eq "nallen"
+    expect( generate_username2("mary lou", "smith jones") ).to eq "msmithjones" 
   end
   
   it "handles empty strings" do
