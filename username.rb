@@ -1,22 +1,28 @@
-def generate_username1(name)
-  #remove whitespace & downcase
-  name[0].strip.downcase
+def generate_username1 first_name
+  return first_name[0].downcase
 end
 
-def generate_username2(first, last)
-  #check to see if last is empty
-  return nil if last.empty?
-  #call generate_username 1 & remove special characters/whitespace then downcase
-  generate_username1(first) + last.gsub(/[^A-Za-z]/, '').downcase
+# using a splat argument allows us to return nil in the event
+# of wrong number of arguments, rather than the program crashing
+def generate_username2 *names
+  # check if both names provided
+  return nil if names.length < 2 || names.length > 2 || names[0] == "" || names[1] == ""
+    # cast the strings to arrays
+    first = names[0].split("")
+    last = names[1].split("")
+    # alphabetic characters only (also removes whitespaces)
+    first.select! do |char|
+      char =~ /[[:alpha:]]/
+    end
+    last.select! do |char|
+      char =~ /[[:alpha:]]/
+    end
+    first[0].downcase + last.join.downcase
 end
 
-def generate_username3(first, last, year)
-  #convert year to a string
-  year_string = year.to_s
-  #check to see that it's equal to 4 digits
-  return nil if year_string.length != 4
-  #call generate_username2 and pluck out last two digits
-  generate_username2(first, last) + year_string[2,2]
+def generate_username3 first_name, last_name, birth_year
+  return nil if birth_year.to_s.length != 4
+  generate_username2(first_name, last_name) << birth_year.to_s[-2..-1]
 end
 
 $user_types = ["user", "seller", "manager", "admin"]
@@ -25,40 +31,31 @@ def check_privilege(type=0)
   $user_types[type]
 end
 
-def generate_username4(first, last, year, type=0)
-  return generate_username3(first, last, year) if type == 0
-  check_privilege(type) + "-" + generate_username3(first, last, year)
+def generate_username4(first_name, last_name, birth_year, type=0)
+  return generate_username3(first_name, last_name, birth_year) if type == 0
+  check_privilege(type) + "-" + generate_username3(first_name, last_name, birth_year)
 end
 
 $users = []
 
-def generate_username5(first, last, year)
-  #generate a username
-  user = generate_username4(first, last, year)
-  #return the username unless it exists in users & add to users
-  unless $users.include?(user)
-    $users << user
-    return user
+def generate_username5(first_name, last_name, birth_year)
+  # generate the new user
+  user = generate_username3(first_name, last_name, birth_year)
+  # check to see how many instances (if any) of user already exist
+  user_count = 0
+  $users.each do |existing_user|
+    # use a regular expression to find and count user instances
+    user_count += 1 if existing_user =~ /#{user}*/
   end
-  #loop through the users and incriment by 1 each time checking if that user exists
-  user_is_not_unique = true
-  #counter
-  i = 1
-  while user_is_not_unique do
-    #create a temporary username based on counter
-    new_username = user + "_" + i.to_s
-    #increment counter
-    i += 1
-    #if the username does not exist...
-    unless $users.include?(new_username)
-      #indicate the user is unique to break out of the loop
-      user_is_not_unique = false
-      #set the username to the unique name
-      username = new_username
-    end
+  # append to user as necessary
+  if user_count == 0
+    $users.push(user)
+  else
+    user += ("_" + user_count.to_s)
+    $users.push(user)
   end
-  #push the username into the users array
-  $users << username
-  #return the new username
-  username
+  user
 end
+
+
+
