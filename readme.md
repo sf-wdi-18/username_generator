@@ -12,11 +12,11 @@ Goal:
 
 ## Workflow and Submission
 
-* Fork this repo to create a `username_generator_ruby` repo on your github account (or use the alternate workflow). 
+* Fork this repo to create a `username_generator` repo on your github account (or use the alternate workflow). 
 * Clone the repo from your github account onto your computer.
 * Work locally. Remember to commit your changes often, with commit messages that remind you what you did.
 * When finished, push your final version to your github account.
-* Submit the link to the `username_generator_ruby` repo on your github account.
+* Submit the link to the `username_generator` repo on your github account.
 
 
 

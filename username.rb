@@ -4,10 +4,10 @@ def generate_username1(name)
 end
 
 def generate_username2(first, last)
-  #check to see if last is empty
-  return nil if last.empty?
+  #check to see if input is empty
+  return nil if last.empty? || first.empty?
   #call generate_username 1 & remove special characters/whitespace then downcase
-  generate_username1(first) + last.gsub(/[^A-Za-z]/, '').downcase
+  generate_username1(first.gsub(/[^A-Za-z]/, '')) + last.gsub(/[^A-Za-z]/, '').downcase
 end
 
 def generate_username3(first, last, year)

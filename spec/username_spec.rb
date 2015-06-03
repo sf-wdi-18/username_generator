@@ -11,7 +11,7 @@ describe "#generate_username1" do
 end
 
 describe "#generate_username2" do
-  it "combines the first character of the first name and the last name" do
+  it "combines the first character of the first name and the whole last name" do
     expect( generate_username2("nathan", "allen") ).to eq "nallen"
   end
 
@@ -22,15 +22,19 @@ describe "#generate_username2" do
   it "removes whitespace" do
     expect( generate_username2("nathan" , " allen ") ).to eq "nallen"
     expect( generate_username2(" nathan " , "allen") ).to eq "nallen"
+    # new test case: internal white space
+    expect( generate_username2("mary lou", "smith jones") ).to eq "msmithjones" 
   end
   
   it "handles empty strings" do
     expect( generate_username2("nathan", "") ).to eq nil
     expect( generate_username2("", "") ).to eq nil
+    #new test case: empty first name only
+    expect( generate_username2("", "allen") ).to eq nil
   end
 
   it "removes special characters in strings" do
-    # hint look at gsub
+    # hint: look at gsub
     expect( generate_username2("Nathan", "Allen !") ).to eq "nallen"
     expect( generate_username2("N@th@n    ", "A-l-l-e-n123! ") ).to eq "nallen"
     expect( generate_username2("@Nathan", " Allen ") ).to eq "nallen"
