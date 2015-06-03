@@ -5,8 +5,9 @@ Goal:
     * John Doe 1978 --> jdoe78
     * John Doe 1978 --> jdoe78_1
     * John Doe 1978 --> jdoe78_2
-    * John Doe 1978 1 --> seller-jdoe78_1
-    * John Doe 1978 2 --> manager-jdoe78_1
+    * John Doe 1978 1 --> seller-jdoe78
+    * John Doe 1978 2 --> manager-jdoe78
+    * John Doe 1978 3 --> admin-jdoe78
     * John Doe 1978 3 --> admin-jdoe78_1
 
 
@@ -82,19 +83,22 @@ Note the following:
     
 3. create a function `generate_username3` that takes three arguments: first_name, last_name and birth_year
     * combine them into one string, e.g. "smith1980"
-    * use only the last two digits of birth_year
-    * reject invalid birth_year input: e.g. cases like 80, 198, 20111
+    * but use only the last two digits of birth_year, e.g. "smith80"
+    * and reject invalid birth_year input: e.g. cases like 80, 198, 20111
 
-4. Privilege levels `check_privilege` --> GOAL: "seller-jdoe78", "admin-xkcd78"
-    * Create a function that allocates privileges according to the following table:
+
+4. create a function `check_privilege` that allocates privileges according to the following table:
+
         * 0 --> "user"
         * 1 --> "seller"
         * 2 --> "manager"
         * 3 --> "admin"
+        
     * return a string indicating the corresponding privilege level
     * make the privilege level 0 by default
     * STRETCH: modify your function to `generate_username4` and have it create accounts that specify user privileges
-        * prefix usernames with e.g. "admin-", "seller-" --> "seller-jdoe78"
+        * prefix usernames with e.g. "admin-", "seller-"
+            * GOAL: "seller-jdoe78", "admin-xkcd78"
         * However do not add any prefix for normal users.
     
 
@@ -105,6 +109,6 @@ Note the following:
 
 6. Playing with inputs:
     
-    OPTION 1 -- Interactively get user input from the command line and output a username to the console. I.e. when I run `ruby username.rb` I should be prompted (from the command line) for my name, birth year, etc.
-    OPTION 2 -- Accept command line arguments (e.g. `ruby username.rb john doe 1980`) and output a username to the console.
+* OPTION 1 -- Interactively get user input from the command line and output a username to the console. I.e. when I run `ruby username.rb` I should be prompted (from the command line) for my name, birth year, etc.
+* OPTION 2 -- Accept command line arguments (e.g. `ruby username.rb john doe 1980`) and output a username to the console.
 
