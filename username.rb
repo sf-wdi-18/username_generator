@@ -1,18 +1,18 @@
 def generate_username1(name)
   #if name is empty, return an empty string
   #otherwise remove whitespace & downcase
-  name.empty? ? "" : name[0].strip.downcase
+  name[0].strip.downcase
 end
 
 def generate_username2(first, last)
-  #check to see if last is empty
-  return nil if last.empty?
-  #call generate_username1 on the first name with special characters/whitespace removed, 
-  #then add last name with special characts/whitespace removed, 
-  # then downcase
+  #check to see if input is empty
+  return nil if last.empty? || first.empty?
+  #call generate_username1 on the first_name's letters only,  
+  #then add last_name's letters only, downcased
   generate_username1(letters_only(first)) + letters_only(last).downcase
 end
 
+# removes all chars except A-Z and a-z from str
 def letters_only(str)
   str.gsub(/[^A-Za-z]/, '')
 end
