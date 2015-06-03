@@ -6,8 +6,7 @@ end
 def generate_username2(first, last)
   #check to see if input is empty
   return nil if last.empty? || first.empty?
-  #call generate_username1 on the first_name's letters only,  
-  #then add last_name's letters only, downcased
+  #call generate_username 1 & remove special characters/whitespace then downcase
   generate_username1(letters_only(first)) + letters_only(last).downcase
 end
 
