@@ -1,6 +1,5 @@
 def generate_username1(name)
-  #if name is empty, return an empty string
-  #otherwise remove whitespace & downcase
+  #remove whitespace & downcase
   name[0].strip.downcase
 end
 
