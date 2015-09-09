@@ -111,18 +111,18 @@ describe "#build_username" do
   end
 
   it "separates the user_type from the user_name with a dash" do
-    expect( build_username("john", "doe", 1945, 1) ).to eq "seller-jdoe45"
-    expect( build_username("john", "doe", 1945, 2) ).to eq "manager-jdoe45"
-    expect( build_username("john", "doe", 1945, 3) ).to eq "admin-jdoe45"
+    expect( build_username("jane", "dawson", 1945, 1) ).to eq "seller-jdawson45"
+    expect( build_username("jane", "dawson", 1945, 2) ).to eq "manager-jdawson45"
+    expect( build_username("jane", "dawson", 1945, 3) ).to eq "admin-jdawson45"
   end
 
   it "does not prefix level 0 usernames with 'user'" do
-    expect( build_username("John", "Doe", 1945, 0) ).not_to start_with("user")
-    expect( build_username("John", "Doe", 1945, 0) ).to eq "jdoe45"
+    expect( build_username("James", "Smith", 1945, 0) ).not_to start_with("user")
+    expect( build_username("James", "Smith", 1945, 0) ).to eq "jsmith45"
   end
 
   it "defaults to type 'user' if no privilege level is specified" do
-    expect( build_username("John", "Doe", 1945) ).to eq "jdoe45"
+    expect( build_username("Jill", "Juniper", 2001) ).to eq "jjuniper01"
   end
 
 end
@@ -130,11 +130,16 @@ end
 
 describe "#generate_username" do
 
+  it "it appends a username count when the username already exists" do
+    expect( generate_username("King", "Kong", 1980) ).to eq "kkong80"
+    expect( generate_username("King", "Kong", 1980) ).to end_with("_1")
+  end
+
   it "it increments usernames that are already in use (uniqueness constraint)" do
-    expect( generate_username("john", "doe", 1945) ).to eq "jdoe45"
-    expect( generate_username("john", "doe", 1945) ).to eq "jdoe45_1"
-    expect( generate_username("john", "doe", 1945) ).to eq "jdoe45_2"
-    expect( generate_username("john", "doe", 1945) ).to eq "jdoe45_3"
+    expect( generate_username("Jack", "Cole", 1999) ).to eq "jcole99"
+    expect( generate_username("Jack", "Cole", 1999) ).to eq "jcole99_1"
+    expect( generate_username("Jack", "Cole", 1999) ).to eq "jcole99_2"
+    expect( generate_username("Jack", "Cole", 1999) ).to eq "jcole99_3"
   end
 
 end
