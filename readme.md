@@ -1,5 +1,12 @@
 ## Username Generator
 
+<!-- BEGIN SF-WDI-LABS BADGES -->
+<!-- INSTRUCTOR TODO: Make sure to manually bump version number of commits-since ("updates") badge to latest release version -->
+[![Current Labs Version](https://img.shields.io/github/tag/SF-WDI-LABS/username_generator.svg?label=sf-wdi-labs)](https://github.com/SF-WDI-LABS/username_generator)
+[![SF-WDI-LABS Commits Since Version](https://img.shields.io/github/commits-since/SF-WDI-LABS/username_generator/v4.32.0.svg)](https://github.com/SF-WDI-LABS/username_generator/commits/master)
+[![Issues Count](https://img.shields.io/github/issues-raw/SF-WDI-LABS/username_generator.svg)](https://github.com/SF-WDI-LABS/username_generator/issues)
+<!-- END SF-WDI-LABS BADGES -->
+
 Your goal is to write a ruby function that generates a username. It should behave in the following way:
 
 | inputs | output |
