@@ -35,6 +35,11 @@ describe "#format_name" do
     expect( format_name("'Justin'", "Ca-sti-lla.") ).to eq "jcastilla"
   end
 
+  it "leaves the original arguments unchanged (has no destructive side-effects)" do
+    first = last = "A-l-l-e-n"
+    expect { format_name first, last }.not_to change { first }
+  end
+
 end
 
 describe "#format_year" do
