@@ -6,6 +6,8 @@
 [![Issues Count](https://img.shields.io/github/issues-raw/SF-WDI-LABS/username_generator.svg)](https://github.com/SF-WDI-LABS/username_generator/issues)
 <!-- END SF-WDI-LABS BADGES -->
 
+<img src="https://cloud.githubusercontent.com/assets/1489337/23436837/c769ec40-fdc0-11e6-8a64-cba73a13a2e6.gif" width="300" title="screenshot of gmail signup - email already taken, alternate suggestions">
+
 Your goal is to write a ruby function that generates a username. It should behave in the following way:
 
 | inputs | output |
@@ -113,8 +115,6 @@ Update your `build_username` function to use prefixes. It should now accept a pr
 Create a function called `generate_username` that has four arguments (first_name, last_name, birth_year, privilege_level) and returns a _unique_ username. Come up with a simple way to store usernames as you create them. 
 
 STRETCH: If a username already exists, append "_1". Then, increment the counter each time you reuse the username (e.g. "jdoe78", "jdoe78\_1", "jdoe7\_2", "bbunny60", "bbunny60\_1").
-
-<img src="https://cloud.githubusercontent.com/assets/1489337/23435482/765b057c-fdbc-11e6-8103-7debcf1e2721.png" width="400" title="gmail signup, email taken, alternative suggestions">
 
 #### BONUS -- Command-line inputs
 * OPTION 1 -- Interactively get user input from the command line and output a username to the console. I.e. when I run `ruby username.rb` I should be prompted (from the command line) for my name, birth year, etc.
