@@ -18,7 +18,6 @@ Your goal is to write a ruby function that generates a username. It should behav
 | Harpo Marx 1888 2 | manager-hmarx88 |
 | Groucho Marx 1890 3 | admin-gmarx90 |
 
-
 ### Setup
 ``` bash
 git clone THIS_REPO
@@ -98,7 +97,6 @@ Create a function called `format_year` that accepts a four digit integer represe
 
 Create a function called `build_username` that takes a user's first_name, last_name, and birth_year, and returns a string with the following format: it starts with the first letter of the first_name, followed by the last_name, followed by the last two digits of the birth_year.
 
-
 #### Level 2
 Create a function called `check_privilege` that takes a level (integer) and returns the corresponding user_type (string).  
 * Allocate privilege using the following table:
@@ -116,7 +114,8 @@ Create a function called `generate_username` that has four arguments (first_name
 
 STRETCH: If a username already exists, append "_1". Then, increment the counter each time you reuse the username (e.g. "jdoe78", "jdoe78\_1", "jdoe7\_2", "bbunny60", "bbunny60\_1").
 
+<img src="https://cloud.githubusercontent.com/assets/1489337/23435482/765b057c-fdbc-11e6-8103-7debcf1e2721.png" width="400" title="gmail signup, email taken, alternative suggestions">
+
 #### BONUS -- Command-line inputs
 * OPTION 1 -- Interactively get user input from the command line and output a username to the console. I.e. when I run `ruby username.rb` I should be prompted (from the command line) for my name, birth year, etc.
 * OPTION 2 -- Accept command line arguments (e.g. `ruby username.rb john doe 1980`) and output a username to the console.
-
