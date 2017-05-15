@@ -73,7 +73,7 @@ You should see roughly the following output:
     rspec ./spec/the_warmup_spec.rb:7 # #say_hello returns 'hello'
 
 
-####Hooray!
+#### Hooray!
 * The first tests are failing. _We're seeing **RED**._
 * Now we need to write code to pass the tests and _turn them **GREEN**_. 
 * When all the tests are green, we're ready to _stop and **REFACTOR**_!
@@ -89,7 +89,7 @@ Code your solutions in `warmup.rb`.
 * Run your tests frequently and read the output carefully.
 * BE *VERY CAREFUL* to use the correct function name.
 
-##Username Challenges
+## Username Challenges
 Run: `rspec spec/username_spec.rb`
 
 #### Level 1
